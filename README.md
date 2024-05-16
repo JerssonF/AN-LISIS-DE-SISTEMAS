@@ -4,4 +4,4 @@
 
 IV Semestre 2024A
 
-[Taller](Taller_1Corte_III)
+[Taller 1- Corte 3](Taller_1Corte_III)
