@@ -33,9 +33,183 @@
 
 #### DIAGRAMA DE CLASES  
  ![Diagrama de clases](Diagrama_de_clases/Reserva.png)
+ #### Código Uml
+ #### @startuml Reserva 
+
+#### class Usuario {
+#### - idusuario : int
+#### - nombre : string 
+#### - apellido : string
+#### - correo : string 
+#### - telefono : string
+#### }
+
+#### class Reservas {
+#### - idreservas : idusuario
+#### - habitacionid : habitacion
+#### - usuarioid : usuario
+#### - fechaingreso : date
+#### - fechasalida : date 
+#### - confirmar : boolean
+#### }
+
+#### class Habitaciones {
+#### - idhabitacion : int 
+#### - tipohabi : string
+#### - estado : string
+#### }
+
+#### class Servicioadicional {
+#### - idservicioadiconales: int
+#### - serviciosid : Servicio
+#### - nombre: String
+#### - descripcion: String
+#### - precio: float
+#### - facturaid : factura
+#### + añadirAServicio(): void
+#### + eliminarDeServicio(): void
+#### }
+
+#### class Factura {
+#### - idFactura: int
+#### - idReserva: Reservas
+#### - detalles: String
+#### - total: float
+#### - Servicioid : Servicio
+#### + generarDetalle(): String
+#### + enviarFactura(): void
+#### }
+
+#### class Detallefactura {
+#### -iddetalle : int 
+#### -descripcion : string 
+#### -facturaid : factura
+#### }
+
+#### class Recordatorio {
+#### - idRecordatorio: int
+#### - idReserva: int
+#### - fechaEnvio: Date
+#### + enviarRecordatorio(): void
+#### }
+
+#### class Consenjeria {
+#### -idconsejeria : id
+#### -nombre : string
+#### -descripcionconse : string
+#### -precioconse : float
+#### -reservasid : Reservas
+#### -Consenjeriaid : Consenjeria
+#### + agregar_servicios(): void
+#### + confirmar_reserva(): void
+#### }
+
+#### class Servicio {
+#### - idservicios : int
+#### - nombre : string 
+#### - descripcion : string
+#### }
+
+#### Usuario  --*  Factura 
+#### Detallefactura -- Servicio
+#### Factura -- Detallefactura
+#### Detallefactura -- Reservas
+#### Habitaciones  -- Reservas
+#### Servicio -- Servicioadicional
+#### Reservas  *--  Recordatorio 
+#### Servicioadicional -- Consenjeria
+#### @enduml
 
 #### DIAGRAMA DE SECUENCIA
  ![Diagrama de secuencia](Diagrama_de_secuencia/Secuencia.png)
+ #### Código Uml
+ #### @startuml
+#### actor Usuario
+
+#### participant "Sistema de Gestión de Reservas" as Sistema
+#### participant "Reserva" as Reserva
+#### participant "Factura" as Factura
+#### participant "Recordatorio" as Recordatorio
+#### participant "Conserjería" as Conserjería
+
+#### activate Usuario
+#### activate Sistema
+
+#### Usuario -> Sistema: Ver reservas existentes
+#### activate Reserva
+#### Sistema --> Usuario: Lista de reservas
+
+#### Usuario -> Sistema: Administrar reservas
+#### activate Reserva
+#### activate Factura
+#### activate Recordatorio
+#### Sistema --> Usuario: Reservas administradas
+
+#### Usuario -> Reserva: Modificar fecha, número de habitaciones\ny servicios adicionales
+#### activate Reserva
+#### Sistema -> Reserva: Modificar
+#### Sistema --> Usuario: Reserva modificada
+
+#### Usuario -> Reserva: Cancelar reserva
+#### activate Reserva
+#### Sistema -> Reserva: Cancelar
+#### Sistema -> Recordatorio: Enviar recordatorio de cancelación
+#### Sistema --> Usuario: Reserva cancelada
+
+#### Usuario -> Sistema: Generar factura
+#### activate Factura
+#### Sistema -> Factura: Generar
+#### Sistema --> Usuario: Factura generada
+
+#### Usuario -> Sistema: Recibir recordatorio antes de la fecha de llegada
+#### activate Recordatorio
+#### Sistema --> Usuario: Recordatorio recibido
+
+#### Usuario -> Conserjería: Reserva en restaurante,trasnporte
+#### activate Reserva
+#### Sistema -> Reserva: Modificar
+#### Sistema --> Usuario:Servicio adional modificado
+
+#### deactivate Recordatorio
+#### deactivate Factura
+#### deactivate Reserva
+#### deactivate Sistema
+#### deactivate Usuario
+#### deactivate Conserjería
+#### @enduml
+
 
 #### DIAGRAMA DE CASOS DE USO
 ![Diagrama de casos de uso](Diagrama_de_casos_uso/Casos_uso.png)
+#### Código Uml
+#### @startuml
+#### left to right direction
+#### actor Usuario as User
+#### actor "Sistema de Gestión de Reservas" as System
+
+#### rectangle "Gestión de Reservas" {
+#### usecase "Ver Reservas" as VerReservas
+#### usecase "Administrar Reservas" as AdminReservas
+#### usecase "Modificar Reserva" as ModificarReserva
+#### usecase "Cancelar Reserva" as CancelarReserva
+#### usecase "Generar Factura" as GenerarFactura
+#### usecase "Enviar Recordatorio" as EnviarRecordatorio
+#### usecase "Servicio de Conserjería" as ServicioConserjeria
+#### }
+
+#### User --> GenerarFactura
+#### User --> VerReservas
+#### User --> AdminReservas
+#### User --> ModificarReserva
+#### User --> CancelarReserva
+#### User --> EnviarRecordatorio
+#### User --> ServicioConserjeria
+
+#### System --> VerReservas
+#### System --> AdminReservas
+#### System --> ModificarReserva
+#### System --> CancelarReserva
+#### System --> GenerarFactura
+#### System --> EnviarRecordatorio
+#### System --> ServicioConserjeria
+#### @enduml
