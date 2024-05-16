@@ -35,6 +35,7 @@
  ![Diagrama de clases](Diagrama_de_clases/Reserva.png)
 
 #### DIAGRAMA DE SECUENCIA
- ![Diagrama de secuenci](Diagrama_de_secuencia/Secuencia.png)
+ ![Diagrama de secuencia](Diagrama_de_secuencia/Secuencia.png)
 
- 
+#### DIAGRAMA DE CASOS DE USO
+![Diagrama de casos de uso](Diagrama_de_casos_uso/Casos_uso.png)
