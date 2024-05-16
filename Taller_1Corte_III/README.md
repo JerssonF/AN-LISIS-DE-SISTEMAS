@@ -12,15 +12,9 @@
   4. Factura: Contiene información detallada de la factura generada para una reserva, incluido un identificador único y un detalle de la factura.
   5. Recordatorio: Modela los recordatorios automáticos enviados antes de la fecha de llegada para confirmar la reserva. Contiene la fecha de envío del recordatorio y su contenido.
 
-  Las relaciones son las siguientes:
+  
 
- *  Un usuario puede tener cero o más reservas (Usuario -> Reserva).
- *  Cada reserva puede contener cero o más servicios adicionales (Reserva -> Servicio).
- *  Cada reserva genera exactamente una factura (Reserva -> Factura).
- *  Cada reserva envía exactamente un recordatorio (Reserva -> Recordatorio).
-
-
- ![Ver](Diagrama/Reservas.png)
+ ![Ver](Reserva.png)
 
  ##### DIAGRAMA DE SECUENCIA
 
