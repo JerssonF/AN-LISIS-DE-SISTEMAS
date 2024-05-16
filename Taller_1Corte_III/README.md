@@ -30,8 +30,8 @@
 * Debe confirmar las solicitudes de servicios de conserjería y proporcionar detalles adicionales si es necesario-
 
 # Diagramas
-#### DIAGRAMA DE CLASE
-  >Ver
+#### DIAGRAMA DE CLASES
+  
  ![Diagrama](Diagrama/Reserva.png)
 
  
