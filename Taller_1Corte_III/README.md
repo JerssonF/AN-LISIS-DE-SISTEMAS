@@ -27,11 +27,14 @@
 * El sistema debe ofrecer servicios de conserjería adicionales, como reservas en restaurantes o transporte local.
 * Debe mostrar información actualizada sobre los servicios disponibles en la ubicación del hotel.
 * Debe permitir a los usuarios solicitar servicios de conserjería como parte de su reserva o posteriormente.
-* Debe confirmar las solicitudes de servicios de conserjería y proporcionar detalles adicionales si es necesario-
+* Debe confirmar las solicitudes de servicios de conserjería y proporcionar detalles adicionales si es necesario.
 
 # Diagramas
-#### DIAGRAMA DE CLASES
-  
- ![Diagrama](Diagrama/Reserva.png)
+
+#### DIAGRAMA DE CLASES  
+ ![Diagrama de clases](Diagrama_de_clases/Reserva.png)
+
+#### DIAGRAMA DE SECUENCIA
+ ![Diagrama de secuenci](Diagrama_de_secuencia/Secuencia.png)
 
  

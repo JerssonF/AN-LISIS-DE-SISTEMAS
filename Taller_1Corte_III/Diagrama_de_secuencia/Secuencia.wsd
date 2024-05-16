@@ -1,0 +1,53 @@
+@startuml
+actor Usuario
+participant "Sistema de Gestión de Reservas" as Sistema
+participant "Reserva" as Reserva
+participant "Factura" as Factura
+participant "Recordatorio" as Recordatorio
+participant "Conserjería" as Conserjería
+
+activate Usuario
+activate Sistema
+
+Usuario -> Sistema: Ver reservas existentes
+activate Reserva
+Sistema --> Usuario: Lista de reservas
+
+Usuario -> Sistema: Administrar reservas
+activate Reserva
+activate Factura
+activate Recordatorio
+Sistema --> Usuario: Reservas administradas
+
+Usuario -> Reserva: Modificar fecha, número de habitaciones\ny servicios adicionales
+activate Reserva
+Sistema -> Reserva: Modificar
+Sistema --> Usuario: Reserva modificada
+
+Usuario -> Reserva: Cancelar reserva
+activate Reserva
+Sistema -> Reserva: Cancelar
+Sistema -> Recordatorio: Enviar recordatorio de cancelación
+Sistema --> Usuario: Reserva cancelada
+
+Usuario -> Sistema: Generar factura
+activate Factura
+Sistema -> Factura: Generar
+Sistema --> Usuario: Factura generada
+
+Usuario -> Sistema: Recibir recordatorio antes de la fecha de llegada
+activate Recordatorio
+Sistema --> Usuario: Recordatorio recibido
+
+Usuario -> Conserjería: Reserva en restaurante,trasnporte
+activate Reserva
+Sistema -> Reserva: Modificar
+Sistema --> Usuario:Servicio adional modificado
+
+deactivate Recordatorio
+deactivate Factura
+deactivate Reserva
+deactivate Sistema
+deactivate Usuario
+deactivate Conserjería
+@enduml
