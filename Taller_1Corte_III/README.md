@@ -12,9 +12,8 @@
   4. Factura: Contiene información detallada de la factura generada para una reserva, incluido un identificador único y un detalle de la factura.
   5. Recordatorio: Modela los recordatorios automáticos enviados antes de la fecha de llegada para confirmar la reserva. Contiene la fecha de envío del recordatorio y su contenido.
 
-  
-
- ![Ver](Reserva.png)
+  >Ver
+ ![Diagrama](Diagrama/Reserva.png)
 
  ##### DIAGRAMA DE SECUENCIA
 
