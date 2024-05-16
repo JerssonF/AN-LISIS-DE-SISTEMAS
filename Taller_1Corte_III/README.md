@@ -20,7 +20,7 @@
  *  Cada reserva envía exactamente un recordatorio (Reserva -> Recordatorio).
 
 
- ![alt text](image.png)
+ ![Ver](Diagrama de clases/Reservas.png)
 
  ##### DIAGRAMA DE SECUENCIA
 
