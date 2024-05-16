@@ -4,6 +4,5 @@
 
 IV Semestre 2024A
 
-* [Ejemplo de diagrama de clase](Ejemplo-diagrama-de-clase)
 
 * [Taller 1- Corte 3](Taller_1Corte_III)
