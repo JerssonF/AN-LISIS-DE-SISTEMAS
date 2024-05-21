@@ -1,0 +1,73 @@
+@startuml Concesionario
+
+class E_Público{
+    -Int   : Código
+    -String: Nombre
+    +Registrar()
+}
+
+class E_autos{
+    -Int   : Código
+    -String: Nombre
+    +Registrar()
+}
+
+class Cliente{
+    -String : Nomnbre
+    -String : Apellido
+    -String : Dirección
+    -String : Departamento
+    -String : Municipio
+    -String : Tipo_documento
+    -Int    : Num_documento
+    -String : Profesión
+    -String : Num_licencia
+    +Registrar ()
+    +Actualizar ()
+
+}
+
+class Vehiculo{
+    -Int    : Código
+    -String : Descripción
+    -String : Marca 
+    -String : Modelo 
+    -String : Estado
+    -Date   : Fecha_fabricación
+}
+
+class Ficha_Alquiler{
+    -Date  : Fecha_alquiler
+    -Int   : Días_alquiler
+    -Float : Precio_alquiler
+    -Float : Km_inicial
+    -Float : Km_final   
+    + Registrar()
+    +Actualizar() 
+    }
+
+class Reparación{
+    -Date   : Fecha_rep
+    -String : Motivo 
+    -Float  : Precio_rep
+    +Registrar()
+
+    }
+class Empleado{
+     -Int   : Código
+    -String: Nombre
+     +Registrar()
+}
+class Fecha_fab {
+    -Date: fecha_fabri 
+}
+Empleado <|--E_Público
+Empleado <|-- E_autos
+E_Público -- Cliente
+E_Público --Ficha_Alquiler
+E_autos --Ficha_Alquiler
+E_autos -- Vehiculo
+Fecha_fab --Vehiculo
+Reparación --Fecha_fab
+
+@enduml
