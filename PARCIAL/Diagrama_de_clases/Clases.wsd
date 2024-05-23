@@ -1,0 +1,50 @@
+@startuml Parcial 
+
+class Cliente {
+    - idusuario : int
+    - tipoDocumento : string
+    - nombre : string 
+    - apellido : string
+    - correo : string 
+    - telefono : string
+    + ModicifarCliente(): string
+    + ConsultarCliente(): string
+    + EliminarCliente(): string
+}
+
+class Facturacliente{
+    - idFactura: int
+    - fecha: date
+    - detalles: String
+    - idCliente : int
+    + ModificarFacturacliente():string
+    + ConsultarFacturacliente(): string
+    + EliminarFacturacliente(): void
+    + generarDetalle(): String
+    + enviarFactura(): void
+}
+
+class Detallefactura{
+    - iddetalle : int 
+    - Cantidad : float 
+    - valorBruto : float
+    - valorNeto : float
+    - valorDescuento: float
+    - valorTotal: float
+    + ConsultarDetallefactura(): string
+    + ModificarfDetallefactura():string
+    + EliminarDetallefactura():void
+}
+
+class Producto{
+    -idProducto : int
+    - NombreProducto : string
+    - DescripciónProducto: string
+    - CategoriaProducto : string
+    - valor : float
+    + ModificarProducto(): string
+    + ConsultarProducto():string
+    + EliminarProducto(): void
+}
+
+class Inventario
