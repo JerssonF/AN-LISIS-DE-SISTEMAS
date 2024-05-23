@@ -47,4 +47,22 @@ class Producto{
     + EliminarProducto(): void
 }
 
-class Inventario
+class Inventario{
+    - id : int
+    - stock : string
+    - fechaIngreso : date
+    - valorDescuento : float
+    -porcentajeIVA: float
+    - fechaSalida : date
+    + ModificarInventario():string
+    + ConsultarInventario(): string
+    + EliminarInventario(): void
+}
+Cliente --* Facturacliente
+Detallefactura -- Facturacliente
+Detallefactura-Inventario
+Producto -- Facturacliente
+Producto -- Inventario
+
+
+@enduml
