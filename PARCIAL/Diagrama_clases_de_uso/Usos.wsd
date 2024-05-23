@@ -1,0 +1,15 @@
+@startuml Diagrama de Casos de Uso
+left to right direction
+actor Cliente as C
+actor Administrador as A
+
+rectangle "Sistema de Facturación" {
+  C --> (Consultar Productos)
+  C --> (Realizar Pedido)
+  C --> (Pagar Factura)
+  
+  A --> (Gestionar Productos)
+  A --> (Gestionar Inventario)
+  A --> (Gestionar Facturas)
+}
+@enduml

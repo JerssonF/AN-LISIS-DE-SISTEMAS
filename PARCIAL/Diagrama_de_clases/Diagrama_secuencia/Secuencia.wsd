@@ -1,0 +1,26 @@
+@startuml Diagrama de Secuencias
+actor Cliente
+entity "Sistema de Facturación" as Sistema
+database "Base de Datos" as BD
+
+Cliente -> Sistema: Solicita Factura
+activate Sistema
+
+Sistema -> BD: Consulta Datos del Cliente
+activate BD
+BD -->> Sistema: Retorna Datos del Cliente
+deactivate BD
+
+Sistema -> BD: Consulta Productos
+activate BD
+BD -->> Sistema: Retorna Productos
+deactivate BD
+
+Sistema -> BD: Crea Factura
+activate BD
+BD -->> Sistema: Retorna Factura Creada
+deactivate BD
+
+Sistema -->> Cliente: Entrega Factura
+deactivate Sistema
+@enduml
