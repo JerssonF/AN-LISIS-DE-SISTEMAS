@@ -59,9 +59,9 @@ class Inventario{
     + EliminarInventario(): void
 }
 Cliente --* Facturacliente
-Detallefactura -- Facturacliente
+Facturacliente -- Detallefactura
 Detallefactura-Inventario
-Producto -- Facturacliente
+Producto -- Detallefactura
 Producto -- Inventario
 
 
